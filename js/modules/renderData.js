@@ -5,11 +5,13 @@ export function renderData(data) {
     results.forEach((item, i) => {
     const html = `
             <article>
+                <section>
                 <h2>${item.titles[0]}</h2>
                 <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
                 <img src="${
                 item.coverimages ? item.coverimages[1] : 'Geen samenvatting'
                 }">
+                </section>
             </article>
             `;
     main.insertAdjacentHTML('beforeend', html);

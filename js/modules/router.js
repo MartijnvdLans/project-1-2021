@@ -3,9 +3,13 @@ import { getData } from './fetchData.js';
 
 export function handleRoutes() { 
     routie({
-        'test': () => {
+        'voeding': () => {
             console.log('test');
-            getData();
+            getData('voeding');
+        },
+        'sport': () => {
+            console.log('test');
+            getData('voeding');
         }
     })
 };

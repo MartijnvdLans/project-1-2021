@@ -9,7 +9,7 @@ export function handleRoutes() {
         },
         'sport': () => {
             console.log('test');
-            getData('voeding');
+            getData('sport');
         }
     })
 };

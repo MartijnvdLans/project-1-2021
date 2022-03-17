@@ -1,3 +1,4 @@
+import { errorState } from "./errorState.js";
 import { renderData } from "./renderData.js";
 
 export function getData(categorie) {
@@ -21,7 +22,7 @@ export function getData(categorie) {
         renderData(data);
     })
     .catch(err => {
-        routie(`error`);
+        errorState();
         console.log(err);
     });
 }

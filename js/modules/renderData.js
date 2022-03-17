@@ -10,6 +10,7 @@ export function renderData(data) {
                 <div>
                 <h2>${item.titles[0]}</h2>
                 <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
+                <a href="#details/${item.id}">
                 </div>
                 <img src="${
                 item.coverimages ? item.coverimages[1] : 'Geen samenvatting'

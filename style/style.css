@@ -48,6 +48,7 @@ h1 {
 
 h1 span {
     font-family: 'obaFont', Arial;
+    margin-top: .45em;
 }
 
 h1 span:nth-child(2) {

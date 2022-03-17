@@ -4,7 +4,7 @@ export function renderData(data, query) {
     const errState = document.querySelector('section:nth-of-type(2)');
     const results = data.results;
     let h2 = document.querySelector(".results");
-    h2.innerHTML = `Resultaten voor: "${query}`;
+    h2.innerHTML = `Resultaten voor: "${query}"`;
     console.dir(results);
     results.forEach((item, i) => {
     const html = `

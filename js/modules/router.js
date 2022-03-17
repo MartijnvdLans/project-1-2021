@@ -1,6 +1,7 @@
 import './vendor/routie.min.js';
 import { getData } from './fetchData.js';
 import { loadingState } from './loadingState.js';
+import { errorState } from './errorState.js';
 
 export function handleRoutes() { 
     routie({
@@ -13,6 +14,9 @@ export function handleRoutes() {
         'search/:onderwerp': onderwerp => {
             loadingState();
             getData(onderwerp);
+        },
+        'error': () => { 
+            errorState();
         }
     })
 };

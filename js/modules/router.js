@@ -1,5 +1,6 @@
 import './vendor/routie.min.js';
 import { getData } from './fetchData.js';
+import { loadingState } from './loadingState.js';
 
 export function handleRoutes() { 
     routie({
@@ -10,6 +11,7 @@ export function handleRoutes() {
             getData('sport');
         },
         'search/:onderwerp': onderwerp => {
+            loadingState();
             getData(onderwerp);
         }
     })

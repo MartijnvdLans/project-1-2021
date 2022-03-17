@@ -1,4 +1,5 @@
 import { renderData } from "./renderData.js";
+import { errorState } from "./errorState.js";
 
 export function getData(categorie) {
     const cors = 'https://cors-anywhere.herokuapp.com/';
@@ -21,6 +22,7 @@ export function getData(categorie) {
         renderData(data);
     })
     .catch(err => {
+        errorState(err);
         console.log(err);
     });
 }

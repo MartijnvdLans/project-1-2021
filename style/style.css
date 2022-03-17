@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'obaFont';
+    src:  url(../assets/obafont.ttf);
+  }
+  
 html, * {
     padding: 0;
     margin: 0;
@@ -6,7 +11,7 @@ html, * {
 }
 
 :root {
-    --primary-red: #ff0000;
+    --primary-red: #00b300;
     --primary-white: #fff;
     --primary-black: #000;
     --primary-grey: rgb(150, 150, 150);
@@ -24,11 +29,6 @@ header {
     flex-wrap: wrap;
 }
 
-header img {
-    width: 8em;
-    padding: 1em;
-}
-
 input[type="checkbox"] {
     display: none;
 }
@@ -39,6 +39,31 @@ header label {
 
 header label img {
     width: 6em;
+    padding: 1em;
+}
+
+h1 {
+    margin-left: .5em;
+}
+
+h1 span {
+    font-family: 'obaFont', Arial;
+}
+
+h1 span:nth-child(2) {
+    font-size: 2em;
+    margin-left: .05em;
+}
+
+h1 span:first-child, h1 span:last-child {
+    display: inline-block;
+    transform: rotate(-90deg);
+    color: var(--primary-red);
+    font-size: 1.6em;
+}
+
+h1 span:last-child {
+    margin-left: -.1em ;
 }
 
 /* ------------- */
@@ -89,7 +114,11 @@ header form button {
 /* MAIN STYLE */
 /* ---------- */
 
-article {
+li {
+    list-style-type: none;
+}
+
+ul:nth-child(2) li {
     display: flex;
     padding: 1em;
     /* background-color: #ccc; */
@@ -98,26 +127,124 @@ article {
     max-width: 100vw;
 }
 
-article img {
+ul:nth-child(2) li img {
     order: 1;
     width: 10em;
     height: 14em;  
     object-fit: cover;
 }
 
-article section {
+ul:nth-child(2) li section {
     order: 2;
     padding: 0 1em;
 }
 
 h2 {
     font-size: 1em;
+    font-family: 'obaFont', Arial;
+    color: var(--primary-red);
 }
 
-h1 {
-    margin-bottom: 1em;
+ul:first-child {
+    /* background-color: var(--primary-red); */
+    width: 8em;
+    height: 8em;
+    margin-top: 2em;
+    position: relative;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
+ul:first-child li:first-child {
+    margin: 0 auto;
+}
+
+ul:first-child li img {
+    width: 6em;
+}
+
+ul:first-child li:not(:first-child) {
+    background: var(--primary-red);
+    width: 1em;
+    height: 1em;
+    border-radius: 90%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+ul:first-child li:nth-child(2) {
+    transform: translateX(-200%);
+    animation: load 1s infinite;
+}
+
+ul:first-child li:nth-child(3) {
+    transform: translateX(-200%);
+    animation: load2 1s infinite;
+}
+
+ul:first-child li:nth-child(4) {
+    transform: translateX(-50%) scale(1.3);
+    animation: load3 1s infinite;
+}
+
+ul:first-child li:nth-child(5) {
+    transform: translateX(100%);
+    animation: load4 1s infinite;
+}
+
+@keyframes load {
+    from {
+        transform: translateX(-200%) scale(.5);
+    }
+
+    to {
+        transform: translateX(-200%) scale(1);
+    }
+}
+
+@keyframes load2 {
+    from {
+        transform: translateX(-200%);
+    }
+
+    to {
+        transform: translateX(-50%) scale(1.3);
+    }
+}
+
+@keyframes load3 {
+    from {
+        transform: translateX(-50%) scale(1.3);
+    }
+
+    to {
+        transform: translateX(100%) scale(1);
+    }
+}
+
+@keyframes load4 {
+    from {
+        transform: translateX(100%) scale(1);
+    }
+
+    to {
+        transform: translateX(100%) scale(.5);
+    }
+}
+
+.displayNone {
+    display: none!important;
+}
+
+section {
+    width: 80vw;
+    margin: 2em auto;
+    max-width: 300px;
+}
 
 /* ------------- */
 /* FOOTER OPMAAK */
@@ -151,16 +278,25 @@ main form input {
     margin-bottom: 1em;
     font-size: 1.5em;
     padding: .5em;
-    border: none;
+    border: 1px solid var(--primary-black);
     outline: none;
+    border-radius: .5em;
 }
 
 main form button {
-    background: var(--primary-white);
-    border: none;
     outline: none;
     padding: 1em;
+    background-color: var(--primary-white);
     color: var(--primary-red);
+    border: 1px solid var(--primary-red);
+    border-radius: .5em;
+    box-shadow: 2px 2px 5px #ccc;
+}
+
+main form button:hover {
+    color: var(--primary-white);
+    border: 1px solid var(--primary-white);
+    background: var(--primary-red);
 }
 
 main form {
@@ -168,15 +304,17 @@ main form {
     flex-direction: column;
     max-width: 20em;
     padding: 1em;
-    background-color: var(--primary-red);
+    background-color: var(--primary-white);
+    border: 2px solid var(--primary-red);
     border-radius: .2em;
-    color: var(--primary-white);
+    color: var(--primary-black);
     position: fixed;
     bottom: 1em;
     left: -18em;
     transition: 1s;
     max-width: 18em;
     transition-property: left;
+    border-radius: .5em;
 }
 
 main form h2 {
@@ -192,3 +330,18 @@ main form h2 {
 #calculator:checked ~ form {
     left: 1em;
 }
+
+@media only screen and (min-width: 720px) {
+    ul:nth-child(2) {
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        max-width: 1100px;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+
+    ul:nth-child(2) li {
+        flex-basis: 49%;
+    }
+  }

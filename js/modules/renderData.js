@@ -1,10 +1,10 @@
 export function renderData(data) {
-    const main = document.querySelector('main');
+    const ul = document.querySelector('ul:nth-of-type(2)');
     const results = data.results;
     console.dir(results);
     results.forEach((item, i) => {
     const html = `
-            <article>
+            <li>
                 <section>
                 <h2>${item.titles[0]}</h2>
                 <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
@@ -12,8 +12,8 @@ export function renderData(data) {
                 <img src="${
                 item.coverimages ? item.coverimages[1] : 'Geen samenvatting'
                 }">
-            </article>
+            </li>
             `;
-    main.insertAdjacentHTML('beforeend', html);
+    ul.insertAdjacentHTML('beforeend', html);
     });
 }

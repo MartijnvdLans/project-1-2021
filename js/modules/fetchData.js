@@ -19,7 +19,7 @@ export function getData(categorie) {
         return response.json();
     })
     .then(data => {
-        renderData(data);
+        renderData(data, query);
     })
     .catch(err => {
         errorState(err);

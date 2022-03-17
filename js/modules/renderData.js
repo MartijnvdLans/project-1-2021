@@ -1,4 +1,4 @@
-export function renderData(data) {
+export function renderData(data, query) {
     const ul = document.querySelector('ul:nth-of-type(2)');
     const ulLoader = document.querySelector('ul:nth-of-type(1)');
     const errState = document.querySelector('section:nth-of-type(2)');
@@ -17,6 +17,7 @@ export function renderData(data) {
                 }">
             </li>
             `;
+    ul.insertAdjacentHTML('beforeend', `<h2>Boeken over ${query}</h2>`)
     ul.insertAdjacentHTML('beforeend', html);
     ulLoader.classList.add('displayNone');
     errState.classList.add('displayNone');

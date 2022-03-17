@@ -3,5 +3,5 @@ export function errorState(err) {
     const errState = document.querySelector('section')
     ulLoader.classList.add('displayNone');
     errState.classList.remove('displayNone');
-
+    routie(`error`);
 }

@@ -171,6 +171,7 @@ ul:nth-of-type(2) li img {
 ul:nth-of-type(2) li div {
     order: 2;
     padding: 0 1em;
+    position: relative;
 }
 
 ul:nth-of-type(2) h2 {
@@ -179,6 +180,24 @@ ul:nth-of-type(2) h2 {
     color: var(--primary-red);
     position: static;
     transform: none;
+}
+
+ul:nth-of-type(2) a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: var(--primary-red);
+    background-color: var(--primary-white);
+    border: 2px solid var(--primary-red);
+    padding: .5em;
+    text-decoration: none;
+    font-family: 'obaFont';
+    text-transform: uppercase;
+}
+
+ul:nth-of-type(2) a:hover {
+    background-color: var(--primary-red);
+    color: var(--primary-white);
 }
 
 ul:nth-of-type(1) {
@@ -285,6 +304,7 @@ section {
     position: fixed;
     bottom: 0;
     width: 100vw;
+    z-index: -1;
 }
 
 /* ------------- */

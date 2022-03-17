@@ -17,6 +17,10 @@ html, * {
     --primary-grey: rgb(150, 150, 150);
 }
 
+main {
+    margin-bottom: 7em;
+}
+
 /* ------------ */
 /* HEADER STYLE */
 /* ------------ */
@@ -35,6 +39,7 @@ input[type="checkbox"] {
 
 header label {
     align-self: center;
+    cursor: pointer;
 }
 
 header label img {
@@ -108,7 +113,8 @@ header form button {
     color: var(--primary-white);
     min-height: 5em;
     max-height: 5em;
-    padding: 2em
+    padding: 2em;
+    cursor: pointer;
 }
 
 /* ---------- */
@@ -119,10 +125,32 @@ li {
     list-style-type: none;
 }
 
+section:nth-of-type(2) h2 {
+    color: var(--primary-red);
+}
+
+main section:nth-of-type(1) {
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main section:nth-of-type(1) h2 {
+    font-size: 2em;
+    margin-bottom: .5em;
+    text-align: center;
+    color: var(--primary-red);
+}
+
+main section:nth-of-type(1) p {
+    text-align: center;
+}
+
 ul:nth-of-type(2) li {
     display: flex;
     padding: 1em;
-    /* background-color: #ccc; */
     margin: 0 auto;
     margin-bottom: 1em;
     border-bottom: 1px solid #000;
@@ -136,37 +164,38 @@ ul:nth-of-type(2) li img {
     object-fit: cover;
 }
 
-ul:nth-of-type(2) li section {
+ul:nth-of-type(2) li div {
     order: 2;
     padding: 0 1em;
 }
 
-h2 {
-    font-size: 1em;
+ul:nth-of-type(2) h2 {
+    font-size: 1.2em;
     font-family: 'obaFont', Arial;
     color: var(--primary-red);
+    position: static;
+    transform: none;
 }
 
-ul:first-child {
-    /* background-color: var(--primary-red); */
+ul:nth-of-type(1) {
     width: 8em;
     height: 8em;
-    margin-top: 2em;
+    margin-top: 5em;
     position: relative;
     display: flex;
     left: 50%;
     transform: translateX(-50%);
 }
 
-ul:first-child li:first-child {
+ul:nth-of-type(1) li:first-child {
     margin: 0 auto;
 }
 
-ul:first-child li img {
+ul:nth-of-type(1) li img {
     width: 6em;
 }
 
-ul:first-child li:not(:first-child) {
+ul:nth-of-type(1) li:not(:first-child) {
     background: var(--primary-red);
     width: 1em;
     height: 1em;
@@ -178,22 +207,22 @@ ul:first-child li:not(:first-child) {
     z-index: 1;
 }
 
-ul:first-child li:nth-child(2) {
+ul:nth-of-type(1) li:nth-child(2) {
     transform: translateX(-200%);
     animation: load 1s infinite;
 }
 
-ul:first-child li:nth-child(3) {
+ul:nth-of-type(1) li:nth-child(3) {
     transform: translateX(-200%);
     animation: load2 1s infinite;
 }
 
-ul:first-child li:nth-child(4) {
+ul:nth-of-type(1) li:nth-child(4) {
     transform: translateX(-50%) scale(1.3);
     animation: load3 1s infinite;
 }
 
-ul:first-child li:nth-child(5) {
+ul:nth-of-type(1) li:nth-child(5) {
     transform: translateX(100%);
     animation: load4 1s infinite;
 }
@@ -248,16 +277,21 @@ section {
     max-width: 300px;
 }
 
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}
+
 /* ------------- */
 /* FOOTER OPMAAK */
 /* ------------- */
 
 .calcButton {
     position: fixed;
-    background-color: var(--primary-red);
-    border: none;
+    background-color: var(--primary-white);
     outline: none;
-    box-shadow: 1px 1px 10px #aaa;
+    box-shadow: 1px 1px 5px #000;
     padding: .5em;
     color: var(--primary-white);
     border-radius: .2em;
@@ -265,6 +299,8 @@ section {
     left: 1em;
     transition: 1s;
     transition-property: left;
+    border: 2px solid var(--primary-red);
+    cursor: pointer;
 }
 
 .calcButton img {
@@ -274,6 +310,7 @@ section {
 main form label {
     border-bottom: 1px solid var(--primary-white);
     margin-bottom: 1em;
+    cursor: pointer;
 }
 
 main form input {
@@ -293,6 +330,7 @@ main form button {
     border: 1px solid var(--primary-red);
     border-radius: .5em;
     box-shadow: 2px 2px 5px #ccc;
+    cursor: pointer;
 }
 
 main form button:hover {
@@ -323,6 +361,7 @@ main form h2 {
     font-size: 1.5em;
     text-align: center;
     margin-bottom: 1em;
+    color: var(--primary-red);
 }
 
 #calculator:checked ~ label {

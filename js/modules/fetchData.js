@@ -22,7 +22,6 @@ export function getData(categorie) {
         renderData(data);
     })
     .catch(err => {
-        errorState();
-        console.log(err);
+        errorState(err);
     });
 }

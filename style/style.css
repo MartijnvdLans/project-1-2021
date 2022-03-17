@@ -42,6 +42,10 @@ header label {
     cursor: pointer;
 }
 
+header label:hover {
+    filter: drop-shadow(3px 3px 3px #aaa);
+}
+
 header label img {
     width: 6em;
     padding: 1em;
@@ -301,6 +305,10 @@ section {
     transition-property: left;
     border: 2px solid var(--primary-red);
     cursor: pointer;
+}
+
+.calcButton:hover {
+    transform: scale(1.1);
 }
 
 .calcButton img {

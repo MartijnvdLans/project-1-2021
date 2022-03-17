@@ -2,7 +2,7 @@ export function loadingState() {
     const ul = document.querySelector('ul:nth-of-type(2)');
     const placeholder = document.querySelector('section:nth-of-type(1)');
     const errMessage = document.querySelector('section:nth-of-type(2)');
-    const h2 = document.querySelector(".results");
+    let h2 = document.querySelector(".results");
     h2.innerHTML = "";
     ul.innerHTML = "";
 

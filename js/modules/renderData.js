@@ -3,7 +3,7 @@ export function renderData(data, query) {
     const ulLoader = document.querySelector('ul:nth-of-type(1)');
     const errState = document.querySelector('section:nth-of-type(2)');
     const results = data.results;
-    const h2 = document.querySelector(".results");
+    let h2 = document.querySelector(".results");
     h2.innerHTML = `Resultaten voor: "${query}`;
     console.dir(results);
     results.forEach((item, i) => {

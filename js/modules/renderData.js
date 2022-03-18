@@ -2,6 +2,7 @@ export function renderData(data, query) {
     const ul = document.querySelector('ul:nth-of-type(2)');
     const ulLoader = document.querySelector('ul:nth-of-type(1)');
     const errState = document.querySelector('section:nth-of-type(2)');
+    const helpMessage = document.querySelector('section:nth-of-type(3)');
     const results = data.results;
     let h2 = document.querySelector(".results");
     h2.innerHTML = `Resultaten voor: "${query}"`;
@@ -22,5 +23,6 @@ export function renderData(data, query) {
     ul.insertAdjacentHTML('beforeend', html);
     ulLoader.classList.add('displayNone');
     errState.classList.add('displayNone');
+    helpMessage.classList.add('displayNone');
     });
 }

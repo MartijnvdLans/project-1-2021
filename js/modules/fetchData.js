@@ -27,16 +27,19 @@ export function getData(categorie) {
 }
 
 export function getDataSource() {
+    const cors = 'https://cors-anywhere.herokuapp.com/';
+    const endpoint2 = 'http://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=';
+    const query = categorie;
     const key = '03b058d877ec4276bb63dd1c6e1f3768';
     const secret = '4289fec4e962a33118340c888699438d';
-    const cors = 'https://cors-anywhere.herokuapp.com/';
-    const url = `${cors}https://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=voeding+NOT+lom.lifecycle.contribute.publisher%3Dwikipedia&authorization=${key}&output=json`;
+    const detail = 'Default';
+    const url2 = `${cors}${endpoint2}${query}&authorization=${key}&detaillevel=${detail}&output=json`;
 
     const config = {
         Authorization: `Bearer ${secret}`
         };
     
-        fetch(url, config)
+        fetch(url2, config)
         .then(response => {
             return response.json();
         })

@@ -55,6 +55,11 @@ h1 {
     margin-left: .5em;
 }
 
+header a {
+    text-decoration: none;
+    color: var(--primary-black);
+}
+
 h1 span {
     font-family: 'obaFont', Arial;
     margin-top: .45em;
@@ -317,17 +322,33 @@ section {
     width: 80vw;
     margin: 2em auto;
     max-width: 300px;
+    bottom: 0;
+    left: 8em
 }
 
-.footer {
+/* ------------------- */
+/* Pijl naar rekentool */
+/* ------------------- */
+
+section:nth-of-type(3) {
     position: fixed;
-    bottom: 0;
-    width: 100vw;
-    z-index: -1;
+    bottom: 3em;
+}
+
+section:nth-of-type(3) p {
+    color: var(--primary-red);
+    font-family: 'obaFont';
+    max-width: 200px;
+    text-align: center;
+}
+
+section:nth-of-type(3) img {
+    width: 15em;
+    transform: rotate(-15deg);
 }
 
 /* ------------- */
-/* FOOTER OPMAAK */
+/* REKENMACHINE */
 /* ------------- */
 
 .calcButton {
@@ -348,6 +369,8 @@ section {
 
 .calcButton:hover {
     transform: scale(1.1);
+    background-color: var(--primary-red);
+    border: 2px solid var(--primary-white);
 }
 
 .calcButton img {
@@ -418,6 +441,11 @@ main form h2 {
 #calculator:checked ~ form {
     left: 1em;
 }
+
+
+/* ---------- */
+/* BIG SCREEN */
+/* ---------- */
 
 @media only screen and (min-width: 720px) {
     ul:nth-of-type(2) {

@@ -3,6 +3,15 @@
 ## De opdracht
 user story: Als sportieve twintiger wil ik mij verdiepen in het effect van gezonde voeding op mijn conditie, om te leren hoe ik mijn sport beter kan beoefenen.
 
+## Features
+
+* Boeken zoeken met een searchbar
+* Rekentool om je recepten om te zetten naar de juiste hoeveelheid personen
+
+## Het concept
+
+Voor deze OBA opracht heb ik een webapp gemaakt die boeken kan vinden. Deze is vooral bedoeld voor voeding, kookboeken en recepten. Zo heeft deze webapp ook een omrekenoptie om je recepten om te rekenen van de originele hoeveelheid naar de werkelijke hoeveelheid
+
 ## API
 Voor deze opdracht heb ik gebruik gemaakt van 2 API's van de OBA.
 
@@ -47,6 +56,12 @@ rechter muisklik in index.html > open with live server
 | Routing | ✅ |
 | Loading state | ✅ |
 | Error State | ✅ |
+
+## Wishlist
+
+Nu dat ik klaar ben met mijn app zijn er nog een paar dingen die ik had willen toevoegen, maar helaas geen tijd meer voor heb kunnen vinden.
+
+zo had ik graag nog een render willen toevoegen voor de data voor het open leer materiaal, maar pas op de vrijdag ochtend is deze data fetch mij gelukt. Naast deze data fetch kwam ik er door een typefout achter dat ik geen error state had toegevoegd voor wanneer er geen boeken beschikbaar waren op deze titel.
 
 ## Author
 

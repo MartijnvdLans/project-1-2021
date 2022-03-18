@@ -29,7 +29,7 @@ export function getData(categorie) {
 export function getDataSource() {
     const cors = 'https://cors-anywhere.herokuapp.com/';
     const endpoint2 = 'http://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=';
-    const query = categorie;
+    const query = "voeding";
     const key = '03b058d877ec4276bb63dd1c6e1f3768';
     const secret = '4289fec4e962a33118340c888699438d';
     const detail = 'Default';
